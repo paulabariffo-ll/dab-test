@@ -1,0 +1,46 @@
+bundle:
+  name: dab-test
+
+include:
+  - resources/*.yml
+
+variables:
+  catalog:
+    default: data-growth
+  schema:
+    default: dab_test
+  volume_path:
+    default: /Volumes/${var.catalog}/${resources.schemas.dab_schema.name}/${resources.volumes.dab_volume.name}
+
+presets:
+  tags:
+    project: ${bundle.name}
+    env: ${bundle.target}
+  trigger_pause_status: PAUSED
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://dbc-20cd6f3c-1cdb.cloud.databricks.com/
+
+  qa:
+    mode: production
+    workspace:
+      host: https://dbc-20cd6f3c-1cdb.cloud.databricks.com/
+      root_path: /Workspace/dab-test/${workspace.current_user.short_name}/${bundle.target}/.bundle
+      file_path: /Workspace/dab-test/${workspace.current_user.short_name}/${bundle.target}
+    presets:
+      name_prefix: "qa_${workspace.current_user.short_name}_"
+      trigger_pause_status: PAUSED
+
+  prod:
+    mode: production
+    workspace:
+      host: https://dbc-20cd6f3c-1cdb.cloud.databricks.com/
+      root_path: /Workspace/dab-test/${workspace.current_user.short_name}/${bundle.target}/.bundle
+      file_path: /Workspace/dab-test/${workspace.current_user.short_name}/${bundle.target}
+    presets:
+      name_prefix: "prod_${workspace.current_user.short_name}_"
+      trigger_pause_status: UNPAUSED

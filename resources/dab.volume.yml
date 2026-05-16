@@ -1,0 +1,6 @@
+resources:
+  volumes:
+    dab_volume:
+      name: dab_volume
+      catalog_name: ${var.catalog}
+      schema_name: ${var.schema}

@@ -32,7 +32,6 @@ targets:
       root_path: /Workspace/dab-test/${workspace.current_user.short_name}/${bundle.target}/.bundle
       file_path: /Workspace/dab-test/${workspace.current_user.short_name}/${bundle.target}
     presets:
-      name_prefix: "qa_${workspace.current_user.short_name}_"
       trigger_pause_status: PAUSED
 
   prod:
@@ -42,5 +41,4 @@ targets:
       root_path: /Workspace/dab-test/${workspace.current_user.short_name}/${bundle.target}/.bundle
       file_path: /Workspace/dab-test/${workspace.current_user.short_name}/${bundle.target}
     presets:
-      name_prefix: "prod_${workspace.current_user.short_name}_"
       trigger_pause_status: UNPAUSED

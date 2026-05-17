@@ -3,7 +3,7 @@ resources:
     etl_pipeline:
       name: etl_pipeline
       catalog: ${var.catalog}
-      schema: ${var.schema}
+      schema: ${resources.schemas.dab_schema.name}
       serverless: true
       root_path: "../src/pipeline_etl"
 
@@ -13,4 +13,4 @@ resources:
 
       configuration:
         source_catalog: ${var.catalog}
-        source_schema: ${var.schema}
+        source_schema: ${resources.schemas.dab_schema.name}

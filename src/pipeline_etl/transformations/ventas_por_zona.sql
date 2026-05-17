@@ -3,5 +3,5 @@ AS SELECT
     zip_code,                   
     SUM(amount) AS total_ventas,
     COUNT(*) as total_transacciones
-FROM `${source_catalog}`.${source_schema}.ventas
+FROM `${source_catalog}`.`${resources.schemas.dab_schema.name}`.ventas
 GROUP BY zip_code;

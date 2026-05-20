@@ -15,7 +15,7 @@ resources:
 
       email_notifications:
         on_failure:
-          - paula.bariffo@lovelytics.com
+          - santiago.agudelo@lovelytics.com
 
       tasks:
         - task_key: create_table

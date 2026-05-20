@@ -40,3 +40,5 @@ targets:
       host: https://dbc-20cd6f3c-1cdb.cloud.databricks.com/
       root_path: /Workspace/dab-test/${workspace.current_user.short_name}/${bundle.target}/.bundle
       file_path: /Workspace/dab-test/${workspace.current_user.short_name}/${bundle.target}
+    presets:
+      trigger_pause_status: UNPAUSED

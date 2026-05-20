@@ -10,7 +10,7 @@ resources:
           default: ${resources.schemas.dab_schema.name}
 
       trigger:
-        pause_status: UNPAUSED
+        pause_status: ${presets.trigger_pause_status}
         file_arrival:
           url: ${var.volume_path}/
 
